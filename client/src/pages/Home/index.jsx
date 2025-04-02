@@ -160,6 +160,7 @@ function Home() {
               <h2>Detalhes da Tarefa</h2>
               <p><strong>Título:</strong> {taskDetails.title}</p>
               <p><strong>Situação:</strong> {taskDetails.finished ? "Finalizada" : "Pendente"}</p>
+              <p><strong>Data de Criação:</strong> {new Date(taskDetails.createdAt).toLocaleString()}</p>
               <button onClick={closeTaskDetails}>Fechar</button>
             </div>
           </div>
