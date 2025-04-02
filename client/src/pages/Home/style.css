@@ -22,29 +22,29 @@ form {
   width: 400px;
   margin-bottom: 20px;
   font-weight: bold;
+}
 
-  & button {
-    border-radius: 30px;
-    background-color: #edd8bb;
-    height: 40px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
+form button {
+  border-radius: 30px;
+  background-color: #edd8bb;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  & button:hover {
-    opacity: 0.8;
-  }
+form button:hover {
+  opacity: 0.8;
+}
 
-  & input {
-    border: 1px solid #f8edca;
-    border-radius: 30px;
-    background-color: #edd8bb;
-    color: white;
-    font-size: 16px;
-    padding-left: 10px;
-    outline: none;
-  }
+form input {
+  border: 1px solid #f8edca;
+  border-radius: 30px;
+  background-color: #edd8bb;
+  color: white;
+  font-size: 16px;
+  padding-left: 10px;
+  outline: none;
 }
 
 .card {
@@ -55,27 +55,26 @@ form {
   padding: 10px;
   width: 400px;
   border-radius: 10px;
+}
 
-  & p {
-    color: white;
-    font-weight: bold;
+.card p {
+  color: white;
+  font-weight: bold;
+}
 
-    & span {
-      font-weight: normal;
-    }
+.card p span {
+  font-weight: normal;
+}
 
-  }
+.card button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
 
-  & button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-  }
-
-  & button:hover {
-    opacity: 0.8;
-  }
+.card button:hover {
+  opacity: 0.8;
 }
 
 .popup {

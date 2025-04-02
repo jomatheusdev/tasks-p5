@@ -42,7 +42,7 @@ const editTask = async (req, res) => {
   let task = await Task.findByIdAndUpdate(
     id,
     updateData,
-    { new: true } // Retorna o documento atualizado
+    { new: true }
   );
 
   res.json({

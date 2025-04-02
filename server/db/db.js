@@ -1,22 +1,22 @@
 let mongoose = require('mongoose');
 
-const server = 'localhost:27017'; // COLOQUE O NOME DO SEU SERVIDOR DO BANCO DE DADOS
-const database = 'crud';      // COLOQUE O NOME DO SEU BANCO DE DADOS
+const server = 'localhost:27017';
+const database = 'crud';
 
 class Database {
   constructor() {
-    this._connect()
+    this._connect();
   }
   
-_connect() {
-     mongoose.connect(`mongodb://${server}/${database}`)
-       .then(() => {
-         console.log('Database connection successful')
-       })
-       .catch(err => {
-         console.error('Database connection error')
-       })
+  _connect() {
+    mongoose.connect(`mongodb://${server}/${database}`)
+      .then(() => {
+        console.log('Database connection successful');
+      })
+      .catch(err => {
+        console.error('Database connection error');
+      });
   }
 }
 
-module.exports = new Database()
+module.exports = new Database();
