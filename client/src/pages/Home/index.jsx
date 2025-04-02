@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import reactLogo from "../../assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./style.css";
 import Trash from "../../assets/trash.svg";
-import api from "../../services/api"
+import api from "../../services/api";
 
 function Home() {
   const [tasks, setTasks] = useState([]);
@@ -15,6 +16,7 @@ function Home() {
   const [editPopupTask, setEditPopupTask] = useState(null);
   const [editStatus, setEditStatus] = useState(false);
   const inputTitle = useRef();
+  const navigate = useNavigate();
 
   async function getTasks() {
     const responseTasks = await api.get("/api/tasks");
@@ -27,6 +29,7 @@ function Home() {
     await api.post("/api/tasks", {
       title: inputTitle.current.value,
     });
+    inputTitle.current.value = "";
     getTasks();
   }
 
@@ -92,6 +95,9 @@ function Home() {
         <input placeholder="Título" name="Título" ref={inputTitle} />
         <button type="button" onClick={createTask}>Cadastrar</button>
       </form>
+      <button type="button" onClick={() => navigate("/tasks")}>
+        Ver Lista de Tarefas
+      </button>
 
       {tasks.map((task) => (
         <div className="card" key={task._id}>
