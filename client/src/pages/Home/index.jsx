@@ -88,6 +88,10 @@ function Home() {
     getTasks();
   }
 
+  useEffect(() => {
+    getTasks(); 
+  }, []);
+
   return (
     <div className="container">
       <form>
