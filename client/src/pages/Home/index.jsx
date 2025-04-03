@@ -19,7 +19,13 @@ function Home() {
   const navigate = useNavigate();
 
   async function getTasks() {
-    const responseTasks = await api.get("/api/tasks");
+    const token = localStorage.getItem("authToken");
+
+    const responseTasks = await api.get("/api/tasks", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     console.log(tasks);
     setTasks(responseTasks.data);
   }
@@ -89,7 +95,7 @@ function Home() {
   }
 
   useEffect(() => {
-    getTasks(); 
+    getTasks();
   }, []);
 
   return (

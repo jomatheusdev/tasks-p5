@@ -1,13 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const taskRoutes = require("./route/taskRoute.js");
+const loginRouter = require('./routes/authRoute.js');
+const taskRouter = require('./routes/taskRoute.js');
 const db = require("./db/db.js");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/api", taskRoutes);
+
+
+app.use("/api", loginRouter);
+app.use("/api", taskRouter);
 
 const port = 3000;
 app.listen(port, () => {
